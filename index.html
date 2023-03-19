@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu dinosaure web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game">
+        <div id="game-message">
+            <p>Appuyez sur la touche espace pour commencer</p>
+        </div>
+        <div id="score"></div>
+        <img src="pictures/dino-stationary.png" id="dino"></img>
+        <img src="pictures/cactus.png" id="cactus"></img>
+        <img src="pictures/ground.png" id="ground"></img>
+        <!-- Bouton pour recharger la page en fin de partie -->
+        <button id="reload" onclick="window.location.reload()">Recommencer</button>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

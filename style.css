@@ -1,0 +1,115 @@
+/* Technique courante utilisée en CSS pour normaliser 
+les styles de base de tous les éléments HTML. */
+*{
+    padding: 0;
+    margin: 0;
+    user-select: none; /* Empêche la sélection de texte */
+}
+
+body{
+    display: flex;
+    justify-content: center;
+}
+
+#game{
+    /* Cree un cadre noir de 1200x520 px */
+    width: 1200px;
+    height: 520px;
+    border : 1px solid black;
+    overflow: hidden; /* Cache les éléments qui dépassent du cadre */
+    position: relative; /* Permet de positionner les éléments par rapport à la page */
+}
+
+#score{
+    position : absolute; /* Permet de positionner le bloc par rapport à la page */
+    top: 100px; 
+    right: 10px; 
+    font-size: 30px;
+}
+
+#game-message{
+    display: flex;
+    position : absolute; /* Permet de positionner le bloc par rapport à la page */
+    top: 20%; 
+    left: 50%;
+    transform: translate(-50%, -50%); /* Permet de centrer le bloc */
+    font-size: 30px; 
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+}
+
+#dino{
+    width: 70px;
+    height: 100px;
+    position: absolute; /* Permet de positionner le bloc par rapport à la page */
+    top: 400px; 
+    left: 10px; /* Permet que le dino ne soit pas collé au bord de la page */
+}
+
+#cactus{
+    width: 50px;
+    height: 70px;
+    position: absolute; /* Permet de positionner le bloc par rapport à la page */
+    top: 430px;
+    left: 1200px; 
+}
+
+#ground{
+    position: absolute;
+    height: 40px;
+    bottom : 0px;
+}
+
+#reload{
+    position: absolute;
+    display: none;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%); /* Permet de centrer le bouton */
+    font-size: 40px;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px black;
+    border-radius: 5px;
+    border : 2px solid black;
+    width: 400px;
+    height: 80px;
+}
+
+#reload:hover{
+    background-color: lightblue;
+}
+
+.jump-animate{
+    animation: jump 0.4s ease-in; /* Animation du dino */
+}
+
+.cactus-animate{
+    animation: cactus 1s linear infinite; /* Animation du cactus */
+}
+
+@keyframes cactus{
+    /* Cree une animation qui fait bouger le cactus de 1200px à -40px */
+    from{
+        left: 1200px;
+    }
+    to{
+        left: -40px;
+    }
+}
+
+
+@keyframes jump{
+    /* Cree une animation qui fait sauter le dino */
+    0%{
+        top: 400px;
+    }
+    30%{
+        top: 250px;
+    }
+    70%{
+        top: 250px;
+    }
+    100%{
+        top: 400px;
+    }
+}
+
